@@ -33,26 +33,7 @@ To train the model:
 ```bash
 python model/train.py
 ```
-## **Inference API**
 
-- **Framework:** FastAPI  
-- **Endpoint:** `POST /predict`  
-- **Input:** JSON with a single field `text` containing the support ticket message  
-- **Output:** JSON with predicted `label` and `confidence` score  
-
-### **Example Request
-**
-```json
-POST /predict
-{
-  "text": "I'm unable to log into my dashboard after the recent update."
-}
-
-{
-  "label": "Technical",
-  "confidence": 0.87
-}
-```
 ## Setup Instructions
 
 ### Clone the Repository
@@ -83,34 +64,6 @@ pip install pandas scikit-learn torch transformers fastapi uvicorn
 
 ---
 
-## Dataset
-
-- **File:** `data/tickets.csv`
-- **Format:** CSV with two columns — `text` (support ticket message) and `label` (Billing/Technical/Other)
-- **Size:** 150 examples (50 per class — balanced for fair training)
-- **Nature:** Synthetic examples generated to simulate real-world support tickets
-
----
-
-## Model and Training
-
-- **Model Used:** DistilBERT (`distilbert-base-uncased`)
-- **Framework:** PyTorch (via Hugging Face `Trainer`)
-- **Tokenizer:** DistilBertTokenizerFast
-- **Data Split:** 80% train / 20% validation
-- **Label Encoding:** `sklearn.LabelEncoder`
-- **Metric:** Accuracy
-- **Training Epochs:** 3
-- **Batch Size:** 8
-- **Output Artifacts:** Saved under `model/` directory
-
-### Train the Model
-
-```bash
-python model/train.py
-```
-
----
 
 ## Run the Inference API
 
