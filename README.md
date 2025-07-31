@@ -52,6 +52,7 @@ POST /predict
   "label": "Technical",
   "confidence": 0.87
 }
+```
 ## Setup Instructions
 
 ### Clone the Repository
