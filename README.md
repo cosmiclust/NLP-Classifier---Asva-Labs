@@ -32,7 +32,7 @@ The goal is to build a text classification system that takes a support ticket an
 To train the model:
 ```bash
 python model/train.py
-
+```
 ## **Inference API**
 
 - **Framework:** FastAPI  
